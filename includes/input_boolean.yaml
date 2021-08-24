@@ -1,0 +1,9 @@
+  drew_asleep:
+    name: Drew Sleep Status
+    icon: mdi:bed
+  shelby_asleep:
+    name: Shelby Sleep Status
+    icon: mdi:bed
+  drew_morning_routine:
+    name: Drew Morning Routine
+    icon: mdi:coffee

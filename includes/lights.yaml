@@ -1,0 +1,12 @@
+  - platform: group
+    name: Pipe Lamp
+    entities:
+      - light.pipe_lamp_1
+      - light.pipe_lamp_2
+      - light.pipe_lamp_3
+  - platform: group
+    name: TV Lights
+    entities:
+      - light.tv_light_1
+      - light.tv_light_2
+      - light.tv_light_3

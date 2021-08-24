@@ -1,0 +1,10 @@
+keymaster_frontdoor_manual_notify:
+  alias: keymaster_frontdoor_manual_notify
+  sequence:
+  - service: notify.mobile_app_andrews_iphone_12_pro
+    data:
+      title: '{{ title }}'
+      message: '{{ message }}'
+  mode: parallel
+  icon: mdi:alert
+  max: 5

@@ -1,0 +1,5 @@
+  echos:
+    name: Echos
+    entities:
+      - media_player.echo_bedroom
+      - media_player.echo_show_living_room

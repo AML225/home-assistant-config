@@ -1,0 +1,39 @@
+mqtt:
+  host: 192.168.1.8
+  port: 1883
+  topic_prefix: frigate
+  client_id: frigate
+  user: mqtt
+  password: mqtt
+  stats_interval: 60
+
+cameras:
+  wyze:
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.1.8:8554/front-door
+          roles:
+            - detect
+            - clips
+    width: 1920
+    height: 1080
+    fps: 5
+    motion:
+      mask:
+        - 1920,1013,1920,1080,1799,1080,1799,1013
+    objects:
+      track:
+        - person
+        - dog
+    snapshots:
+      enabled: True
+      bounding_box: True
+    clips:
+      enabled: True
+      pre_capture: 5
+      post_capture: 5
+
+detectors:
+  coral:
+    type: edgetpu
+    device: usb

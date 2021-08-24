@@ -1,0 +1,98 @@
+  - platform: template
+    sensors:
+      harmony_activity:
+        value_template: >
+          {% if is_state("remote.harmony_hub", 'on') %}
+            {{ states.remote.harmony_hub.attributes.current_activity }}
+          {% else %}
+            PowerOff
+          {% endif %}
+      bedroom_air_quality:
+        friendly_name: "Bedroom Air Quality"
+        value_template: >-
+          {% if states('sensor.airthings_bedroom_voc')|int < 250 %}
+            good
+          {% elif states('sensor.airthings_bedroom_voc')|int >= 250 and states('sensor.airthings_bedroom_voc')|int < 1000 %}
+            fair
+          {% elif states('sensor.airthings_bedroom_voc')|int >= 1000 %}
+            poor
+          {% else %}
+            error
+          {% endif %}
+      livingroom_air_quality:
+        friendly_name: "Living Room Air Quality"
+        value_template: >-
+          {% if states('sensor.airthings_livingroom_voc')|int < 250 and states('sensor.airthings_livingroom_co2')|int < 1000 %}
+            good
+          {% elif states('sensor.airthings_livingroom_voc')|int >= 250 and states('sensor.airthings_livingroom_voc')|int < 1000 %}
+            fair
+          {% elif states('sensor.airthings_livingroom_co2')|int >= 1000 and states('sensor.airthings_livingroom_co2')|int < 1500 %}
+            fair
+          {% elif states('sensor.airthings_livingroom_voc')|int >= 1000 or states('sensor.airthings_livingroom_co2')|int >= 1500 %}
+            poor
+          {% else %}
+            error
+          {% endif %}
+      drew_asleep:
+        friendly_name: Drew Sleep Status
+        value_template: >-
+          {% set person_name = "andrew_lane" %}
+          {% set sleep_boolean = "drew_asleep" %}
+          {% if is_state("person." + person_name,"home") and is_state("input_boolean." + sleep_boolean,"on") %}
+            asleep
+          {% elif is_state("person." + person_name,"home") and is_state("input_boolean." + sleep_boolean,"off") %}
+            awake
+          {% elif is_state("person." + person_name,"not_home") %}
+            awake
+          {% else %}
+            error
+          {% endif %}
+      shelby_asleep:
+        friendly_name: Shelby Sleep Status
+        value_template: >-
+          {% set person_name = "shelby_hulett" %}
+          {% set sleep_boolean = "shelby_asleep" %}
+          {% if is_state("person." + person_name,"home") and is_state("input_boolean." + sleep_boolean,"on") %}
+            asleep
+          {% elif is_state("person." + person_name,"home") and is_state("input_boolean." + sleep_boolean,"off") %}
+            awake
+          {% elif is_state("person." + person_name,"not_home") %}
+            awake
+          {% else %}
+            error
+          {% endif %}
+      last_alexa:
+        value_template: >
+          {{ expand(states.group.echos) | selectattr('attributes.last_called','eq',True) | map(attribute='entity_id') | first }}
+  - platform: sql
+    db_url: !secret mariadb_url
+    queries:
+    - name: Database Size
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema'
+      column: 'value'
+      unit_of_measurement: MB
+  - platform: command_line
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone2/temp"
+    unit_of_measurement: "F"
+    value_template: '{{ (value | multiply(0.001) * 1.8 + 32) | round(1) }}'
+  - platform: systemmonitor
+    resources:
+      - type: disk_free
+      - type: disk_use
+      - type: memory_use_percent
+#      - type: network_in
+#        arg: eth0
+#      - type: network_out
+#        arg: eth0
+      - type: processor_use
+#      - type: processor_temperature
+      - type: last_boot
+#   - platform: airthings_wave
+#     mac: 80:6f:b0:b9:e9:62 #Wave Mini, Bedroom
+#     scan_interval: 120
+#     elevation: 973
+#   - platform: airthings_wave
+#     mac: 80:6f:b0:59:99:43 #Wave Plus, Living Room
+#     scan_interval: 120
+#     elevation: 973

@@ -1,0 +1,8 @@
+switch.xbox:
+  icon: mdi:microsoft-xbox
+switch.ps5:
+  icon: mdi:sony-playstation
+switch.apple_tv:
+  icon: mdi:apple
+zone.home:
+  radius: 100

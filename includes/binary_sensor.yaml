@@ -1,0 +1,6 @@
+  - platform: template
+    sensors:
+      kettle_on:
+        friendly_name: "Kettle On"
+        device_class: power
+        value_template: "{{ states('sensor.kettle_switch_electric_consumed_a')|float > 2.5 }}"

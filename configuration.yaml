@@ -1,0 +1,38 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+homeassistant:
+  packages: !include_dir_named packages
+  customize: !include customize.yaml
+
+recorder:
+  db_url: !secret mariadb_url
+
+zha:
+ database_path: /config/zigbee.db
+
+# Manged via UI
+automation: !include automations.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+
+# Includes managed via YAML
+binary_sensor: !include includes/binary_sensor.yaml
+device_tracker: !include includes/device_tracker.yaml
+group: !include includes/groups.yaml
+input_boolean: !include includes/input_boolean.yaml
+input_select: !include includes/input_select.yaml
+input_text: !include includes/input_text.yaml
+light: !include includes/lights.yaml
+sensor: !include includes/sensor.yaml
+switch: !include includes/switch.yaml
+
+# logger:
+#   default: error
+#   logs:
+#     homeassistant.components.websocket_api: debug

@@ -1,0 +1,7 @@
+  location_mode:
+    name: Location Mode
+    options:
+     - home
+     - away
+     - asleep
+     - night
