@@ -19,16 +19,16 @@
           {% else %}
             error
           {% endif %}
-      livingroom_air_quality:
+      living_room_air_quality:
         friendly_name: "Living Room Air Quality"
         value_template: >-
-          {% if states('sensor.airthings_livingroom_voc')|int < 250 and states('sensor.airthings_livingroom_co2')|int < 1000 %}
+          {% if states('sensor.airthings_living_room_voc')|int < 250 and states('sensor.airthings_living_room_co2')|int < 1000 %}
             good
-          {% elif states('sensor.airthings_livingroom_voc')|int >= 250 and states('sensor.airthings_livingroom_voc')|int < 1000 %}
+          {% elif states('sensor.airthings_living_room_voc')|int >= 250 and states('sensor.airthings_living_room_voc')|int < 1000 %}
             fair
-          {% elif states('sensor.airthings_livingroom_co2')|int >= 1000 and states('sensor.airthings_livingroom_co2')|int < 1500 %}
+          {% elif states('sensor.airthings_living_room_co2')|int >= 1000 and states('sensor.airthings_living_room_co2')|int < 1500 %}
             fair
-          {% elif states('sensor.airthings_livingroom_voc')|int >= 1000 or states('sensor.airthings_livingroom_co2')|int >= 1500 %}
+          {% elif states('sensor.airthings_living_room_voc')|int >= 1000 or states('sensor.airthings_living_room_co2')|int >= 1500 %}
             poor
           {% else %}
             error
@@ -88,11 +88,11 @@
       - type: processor_use
 #      - type: processor_temperature
       - type: last_boot
-#   - platform: airthings_wave
-#     mac: 80:6f:b0:b9:e9:62 #Wave Mini, Bedroom
-#     scan_interval: 120
-#     elevation: 973
-#   - platform: airthings_wave
-#     mac: 80:6f:b0:59:99:43 #Wave Plus, Living Room
-#     scan_interval: 120
-#     elevation: 973
+  - platform: airthings_wave
+    mac: 80:6f:b0:b9:e9:62 #Wave Mini, Bedroom
+    scan_interval: 120
+    elevation: 268
+  - platform: airthings_wave
+    mac: 80:6f:b0:59:99:43 #Wave Plus, Living Room
+    scan_interval: 120
+    elevation: 268

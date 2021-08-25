@@ -12,14 +12,14 @@
 #       input: /config/ha_gitpush.sh
 #   mode: single
 
-# - alias: Notify of Frigate Events
-#   trigger:
-#   - platform: mqtt
-#     topic: frigate/events
-#   action:
-#   - service: notify.mobile_app_andrews_iphone_12_pro
-#     data_template:
-#       message: 'A {{trigger.payload_json["after"]["label"]}} was detected.'
-#       data:
-#         image: 'https://o61sm9rwgmfhut7k9el3fkn74hmq99pd.ui.nabu.casa/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg?format=android'
-#         tag: '{{trigger.payload_json["after"]["id"]}}'
+- alias: Notify of Frigate Events
+  trigger:
+  - platform: mqtt
+    topic: frigate/events
+  action:
+  - service: notify.mobile_app_andrews_iphone_12_pro
+    data_template:
+      message: 'A {{trigger.payload_json["after"]["label"]}} was detected.'
+      data:
+        image: !secret frigate_notification_url
+        tag: '{{trigger.payload_json["after"]["id"]}}'
