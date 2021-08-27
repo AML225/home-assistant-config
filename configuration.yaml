@@ -13,6 +13,9 @@ homeassistant:
 recorder:
   db_url: !secret mariadb_url
 
+logger:
+  default: error
+
 zha:
  database_path: /config/zigbee.db
 
