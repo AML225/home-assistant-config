@@ -36,3 +36,8 @@ sensor: !include includes/sensor.yaml
 switch: !include includes/switch.yaml
 
 prometheus:
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.100
