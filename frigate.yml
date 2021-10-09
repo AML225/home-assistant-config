@@ -14,10 +14,10 @@ cameras:
         - path: rtsp://192.168.1.8:8554/front-door
           roles:
             - detect
-            - clips
-    width: 1920
-    height: 1080
-    fps: 5
+    detect:
+      width: 1920
+      height: 1080
+      fps: 5
     motion:
       mask:
         - 1920,1013,1920,1080,1799,1080,1799,1013
@@ -28,11 +28,12 @@ cameras:
     snapshots:
       enabled: True
       bounding_box: True
-    clips:
-      enabled: True
-      pre_capture: 5
-      post_capture: 5
-
+record:
+  enabled: true
+  retain_days: 0
+  events:
+    retain:
+      default: 10
 detectors:
   coral:
     type: edgetpu

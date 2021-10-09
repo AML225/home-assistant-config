@@ -1458,5 +1458,46 @@
                 "file": "/config/node-red/node_modules/node-red-contrib-eztimer/index.js"
             }
         }
+    },
+    "node-red-contrib-ha-inovelli-manager": {
+        "name": "node-red-contrib-ha-inovelli-manager",
+        "version": "0.0.6",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "inovelli-notification-manager": {
+                "name": "inovelli-notification-manager",
+                "types": [
+                    "inovelli-notification-manager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-ha-inovelli-manager",
+                "file": "/config/node-red/node_modules/node-red-contrib-ha-inovelli-manager/nodes/inovelli-notification-manager.js"
+            },
+            "inovelli-led-manager": {
+                "name": "inovelli-led-manager",
+                "types": [
+                    "inovelli-led-manager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-ha-inovelli-manager",
+                "file": "/config/node-red/node_modules/node-red-contrib-ha-inovelli-manager/nodes/inovelli-led-manager.js"
+            },
+            "inovelli-scene-manager": {
+                "name": "inovelli-scene-manager",
+                "types": [
+                    "inovelli-scene-manager"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-ha-inovelli-manager",
+                "file": "/config/node-red/node_modules/node-red-contrib-ha-inovelli-manager/nodes/inovelli-scene-manager.js"
+            }
+        }
     }
 }
