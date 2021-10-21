@@ -5,4 +5,6 @@ switch.ps5:
 switch.apple_tv:
   icon: mdi:apple
 zone.home:
-  radius: 100
+  radius: 50
+  latitude: 34.16765
+  longitude: -118.63825

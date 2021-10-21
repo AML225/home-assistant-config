@@ -8,33 +8,61 @@ mqtt:
   stats_interval: 60
 
 cameras:
-  wyze:
+  courtyard-south:
     ffmpeg:
       inputs:
-        - path: rtsp://192.168.1.8:8554/front-door
+        - path: rtsp://admin:eagle989@192.168.1.44:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - record
+            - rtmp
+        - path: rtsp://admin:eagle989@192.168.1.44:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
-    detect:
-      width: 1920
-      height: 1080
-      fps: 5
-    motion:
-      mask:
-        - 1920,1013,1920,1080,1799,1080,1799,1013
     objects:
       track:
         - person
         - dog
-    snapshots:
-      enabled: True
-      bounding_box: True
+  front-doorbell:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:eagle989@192.168.1.33:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - record
+            - rtmp
+        - path: rtsp://admin:eagle989@192.168.1.33:554/cam/realmonitor?channel=1&subtype=1
+          roles:
+            - detect
+    objects:
+      track:
+        - person
+        - dog
+detect:
+  enabled: True
+  fps: 5
+  max_disappeared: 50
+snapshots:
+  enabled: True
+  timestamp: True
+  bounding_box: True
+  retain:
+    default: 3
 record:
-  enabled: true
+  enabled: True
   retain_days: 0
   events:
     retain:
-      default: 10
+      default: 1
+    pre_capture: 5
+    post_capture: 5
 detectors:
   coral:
     type: edgetpu
     device: usb
+ffmpeg:
+  hwaccel_args:
+    - -hwaccel
+    - vaapi
+    - -hwaccel_device
+    - /dev/dri/renderD128
+    - -hwaccel_output_format
+    - yuv420p
