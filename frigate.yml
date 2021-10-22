@@ -58,6 +58,16 @@ detectors:
   coral:
     type: edgetpu
     device: usb
+birdseye:
+  enabled: True
+  width: 1280
+  height: 720
+  quality: 8
+  # Optional: Mode of the view. Available options are: objects, motion, and continuous
+  #   objects - cameras are included if they have had a tracked object within the last 30 seconds
+  #   motion - cameras are included if motion was detected in the last 30 seconds
+  #   continuous - all cameras are included always
+  mode: continuous
 ffmpeg:
   hwaccel_args:
     - -hwaccel
