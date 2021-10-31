@@ -61,6 +61,18 @@
           {% else %}
             error
           {% endif %}
+      sleep:
+        friendly_name: Home Sleep Sensor
+        value_template: >-
+          {% if (is_state("sensor.shelby_asleep", "asleep")) and (is_state("sensor.drew_asleep", "asleep")) -%}
+            everyone_asleep
+          {%- elif (is_state("sensor.shelby_asleep", "asleep")) and (is_state("sensor.drew_asleep", "awake")) -%}
+            shelby_asleep
+          {%- elif (is_state("sensor.shelby_asleep", "awake")) and (is_state("sensor.drew_asleep", "asleep")) -%}
+            drew_asleep
+          {%- elif (is_state("sensor.shelby_asleep", "awake")) and (is_state("sensor.drew_asleep", "awake")) -%}
+            awake
+          {%- endif %}
       last_alexa:
         value_template: >
           {{ expand(states.group.echos) | selectattr('attributes.last_called','eq',True) | map(attribute='entity_id') | first }}
