@@ -10,11 +10,52 @@
         image: https://o61sm9rwgmfhut7k9el3fkn74hmq99pd.ui.nabu.casa/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg?format=android
         tag: '{{trigger.payload_json["after"]["id"]}}'
   id: 5a0bbec096044b6e8deb30f6f597bca5
-- id: '1634740684725'
-  alias: Frigate Notification
+- id: '1636214600678'
+  alias: Frigate Notification - backyard-north
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_notification.yaml
+    input:
+      camera: backyard-north
+      notify_device: 7516b6f48fd25b5189d0c1d5e55e4556
+      cooldown: 30
+- id: '1636214880953'
+  alias: Frigate Notification - courtyard-south
   description: ''
   use_blueprint:
     path: hunterjm/frigate_notification.yaml
     input:
       camera: courtyard-south
+      notify_device: 7516b6f48fd25b5189d0c1d5e55e4556
+- id: '1636214992474'
+  alias: Frigate Notification - front-doorbell
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_notification.yaml
+    input:
+      camera: front-doorbell
+      notify_device: 7516b6f48fd25b5189d0c1d5e55e4556
+- id: '1636215037172'
+  alias: Frigate Notification - garage-west
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_notification.yaml
+    input:
+      camera: garage-west
+      notify_device: 7516b6f48fd25b5189d0c1d5e55e4556
+- id: '1636215069039'
+  alias: Frigate Notification - sideyard-north
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_notification.yaml
+    input:
+      camera: sideyard-north
+      notify_device: 7516b6f48fd25b5189d0c1d5e55e4556
+- id: '1636215094215'
+  alias: Frigate Notification - south-gate
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_notification.yaml
+    input:
+      camera: south-gate
       notify_device: 7516b6f48fd25b5189d0c1d5e55e4556

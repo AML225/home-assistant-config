@@ -1,13 +1,13 @@
-drew_iphone_lan:
-  name: drew_iphone_lan
-  mac:
-  icon:
-  picture:
-  track: true
-  
-shelby_iphone_lan:
-  name: shelby_iphone_lan
-  mac:
-  icon:
-  picture:
-  track: true
+# drew_iphone_wlan:
+#   icon:
+#   mac:
+#   name: Drew iPhone WLAN
+#   picture:
+#   track: true
+
+# shelby_iphone_wlan:
+#   icon:
+#   mac:
+#   name: Shelby iPhone WLAN
+#   picture:
+#   track: true

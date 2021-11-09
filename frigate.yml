@@ -1,5 +1,5 @@
 mqtt:
-  host: 192.168.1.8
+  host: 192.168.20.2
   port: 1883
   topic_prefix: frigate
   client_id: frigate
@@ -11,11 +11,11 @@ cameras:
   courtyard-south:
     ffmpeg:
       inputs:
-        - path: rtsp://admin:eagle989@192.168.1.44:554/cam/realmonitor?channel=1&subtype=0
+        - path: rtsp://admin:eagle989@192.168.40.17:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - record
             - rtmp
-        - path: rtsp://admin:eagle989@192.168.1.44:554/cam/realmonitor?channel=1&subtype=1
+        - path: rtsp://admin:eagle989@192.168.40.17:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
     objects:
@@ -26,11 +26,11 @@ cameras:
   front-doorbell:
     ffmpeg:
       inputs:
-        - path: rtsp://admin:eagle989@192.168.1.33:554/cam/realmonitor?channel=1&subtype=0
+        - path: rtsp://admin:eagle989@192.168.30.3:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - record
             - rtmp
-        - path: rtsp://admin:eagle989@192.168.1.33:554/cam/realmonitor?channel=1&subtype=1
+        - path: rtsp://admin:eagle989@192.168.30.3:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
     objects:
@@ -41,11 +41,11 @@ cameras:
   backyard-north:
     ffmpeg:
       inputs:
-        - path: rtsp://admin:eagle989@192.168.1.45:554/cam/realmonitor?channel=1&subtype=0
+        - path: rtsp://admin:eagle989@192.168.40.20:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - record
             - rtmp
-        - path: rtsp://admin:eagle989@192.168.1.45:554/cam/realmonitor?channel=1&subtype=1
+        - path: rtsp://admin:eagle989@192.168.40.20:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
     objects:
@@ -56,11 +56,11 @@ cameras:
   sideyard-north:
     ffmpeg:
       inputs:
-        - path: rtsp://admin:eagle989@192.168.1.46:554/cam/realmonitor?channel=1&subtype=0
+        - path: rtsp://admin:eagle989@192.168.40.21:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - record
             - rtmp
-        - path: rtsp://admin:eagle989@192.168.1.46:554/cam/realmonitor?channel=1&subtype=1
+        - path: rtsp://admin:eagle989@192.168.40.21:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
     objects:
@@ -71,11 +71,26 @@ cameras:
   south-gate:
     ffmpeg:
       inputs:
-        - path: rtsp://admin:eagle989@192.168.1.47:554/cam/realmonitor?channel=1&subtype=0
+        - path: rtsp://admin:eagle989@192.168.40.18:554/cam/realmonitor?channel=1&subtype=0
           roles:
             - record
             - rtmp
-        - path: rtsp://admin:eagle989@192.168.1.47:554/cam/realmonitor?channel=1&subtype=1
+        - path: rtsp://admin:eagle989@192.168.40.18:554/cam/realmonitor?channel=1&subtype=1
+          roles:
+            - detect
+    objects:
+      track:
+        - person
+        - dog
+        - cat
+  garage-west:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:eagle989@192.168.40.23:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - record
+            - rtmp
+        - path: rtsp://admin:eagle989@192.168.40.23:554/cam/realmonitor?channel=1&subtype=1
           roles:
             - detect
     objects:
@@ -85,6 +100,8 @@ cameras:
         - cat
 detect:
   enabled: True
+  width: 704
+  height: 480
   fps: 5
   max_disappeared: 50
 snapshots:
@@ -107,8 +124,8 @@ detectors:
     device: usb
 birdseye:
   enabled: True
-  width: 1280
-  height: 720
+  width: 2592
+  height: 1944
   quality: 8
   # Optional: Mode of the view. Available options are: objects, motion, and continuous
   #   objects - cameras are included if they have had a tracked object within the last 30 seconds

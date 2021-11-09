@@ -1,7 +1,8 @@
-  - platform: iphonedetect
-    consider_home: 60
-    new_device_defaults:
-      track_new_devices: false
-    hosts:
-      drew_iphone_lan: 192.168.1.13
-      shelby_iphone_lan: 192.168.1.14
+#   - platform: iphonedetect
+#     consider_home: 60
+#     scan_interval: 12
+#     new_device_defaults:
+#       track_new_devices: false
+#     hosts:
+#       drew_iphone_wlan: 192.168.10.2
+#       shelby_iphone_wlan: 192.168.10.3
