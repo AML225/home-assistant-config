@@ -21,8 +21,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
   front-doorbell:
     ffmpeg:
       inputs:
@@ -36,8 +34,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
   backyard-north:
     ffmpeg:
       inputs:
@@ -51,8 +47,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
   sideyard-north:
     ffmpeg:
       inputs:
@@ -66,8 +60,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
   south-gate:
     ffmpeg:
       inputs:
@@ -81,8 +73,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
   garage-west:
     ffmpeg:
       inputs:
@@ -96,8 +86,6 @@ cameras:
     objects:
       track:
         - person
-        - dog
-        - cat
 detect:
   enabled: True
   width: 704

@@ -232,3 +232,147 @@
                       - input_boolean.sat_inc_frontdoor_3
                       - input_datetime.sat_start_date_frontdoor_3
                       - input_datetime.sat_end_date_frontdoor_3
+      - type: vertical-stack
+        cards:
+          - content: |
+              ## Code 4
+            type: markdown
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: input_text.frontdoor_name_4
+              - entity: input_text.frontdoor_pin_4
+              - entity: input_boolean.enabled_frontdoor_4
+              - entity: input_boolean.notify_frontdoor_4
+              - type: divider
+              - entity: sensor.connected_frontdoor_4
+                state_color: true
+              - entity: binary_sensor.active_frontdoor_4
+                state_color: true
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Advanced Options
+                entities:
+                  - entity: input_boolean.reset_codeslot_frontdoor_4
+                  - type: divider
+                  - entity: input_boolean.accesslimit_frontdoor_4
+                  - entity: input_number.accesscount_frontdoor_4
+                    type: 'custom:numberbox-card'
+                    icon: 'mdi:key-variant'
+                    speed: 250
+                  - type: divider
+                  - entity: input_boolean.daterange_frontdoor_4
+                  - entity: input_datetime.start_date_frontdoor_4
+                  - entity: input_datetime.end_date_frontdoor_4
+                  - type: 'custom:fold-entity-row'
+                    head:
+                      type: section
+                      label: Custom Weekdays
+                    entities:
+                      - input_boolean.sun_frontdoor_4
+                      - input_boolean.sun_inc_frontdoor_4
+                      - input_datetime.sun_start_date_frontdoor_4
+                      - input_datetime.sun_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.mon_frontdoor_4
+                      - input_boolean.mon_inc_frontdoor_4
+                      - input_datetime.mon_start_date_frontdoor_4
+                      - input_datetime.mon_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.tue_frontdoor_4
+                      - input_boolean.tue_inc_frontdoor_4
+                      - input_datetime.tue_start_date_frontdoor_4
+                      - input_datetime.tue_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.wed_frontdoor_4
+                      - input_boolean.wed_inc_frontdoor_4
+                      - input_datetime.wed_start_date_frontdoor_4
+                      - input_datetime.wed_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.thu_frontdoor_4
+                      - input_boolean.thu_inc_frontdoor_4
+                      - input_datetime.thu_start_date_frontdoor_4
+                      - input_datetime.thu_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.fri_frontdoor_4
+                      - input_boolean.fri_inc_frontdoor_4
+                      - input_datetime.fri_start_date_frontdoor_4
+                      - input_datetime.fri_end_date_frontdoor_4
+                      - type: divider
+                      - input_boolean.sat_frontdoor_4
+                      - input_boolean.sat_inc_frontdoor_4
+                      - input_datetime.sat_start_date_frontdoor_4
+                      - input_datetime.sat_end_date_frontdoor_4
+      - type: vertical-stack
+        cards:
+          - content: |
+              ## Code 5
+            type: markdown
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: input_text.frontdoor_name_5
+              - entity: input_text.frontdoor_pin_5
+              - entity: input_boolean.enabled_frontdoor_5
+              - entity: input_boolean.notify_frontdoor_5
+              - type: divider
+              - entity: sensor.connected_frontdoor_5
+                state_color: true
+              - entity: binary_sensor.active_frontdoor_5
+                state_color: true
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Advanced Options
+                entities:
+                  - entity: input_boolean.reset_codeslot_frontdoor_5
+                  - type: divider
+                  - entity: input_boolean.accesslimit_frontdoor_5
+                  - entity: input_number.accesscount_frontdoor_5
+                    type: 'custom:numberbox-card'
+                    icon: 'mdi:key-variant'
+                    speed: 250
+                  - type: divider
+                  - entity: input_boolean.daterange_frontdoor_5
+                  - entity: input_datetime.start_date_frontdoor_5
+                  - entity: input_datetime.end_date_frontdoor_5
+                  - type: 'custom:fold-entity-row'
+                    head:
+                      type: section
+                      label: Custom Weekdays
+                    entities:
+                      - input_boolean.sun_frontdoor_5
+                      - input_boolean.sun_inc_frontdoor_5
+                      - input_datetime.sun_start_date_frontdoor_5
+                      - input_datetime.sun_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.mon_frontdoor_5
+                      - input_boolean.mon_inc_frontdoor_5
+                      - input_datetime.mon_start_date_frontdoor_5
+                      - input_datetime.mon_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.tue_frontdoor_5
+                      - input_boolean.tue_inc_frontdoor_5
+                      - input_datetime.tue_start_date_frontdoor_5
+                      - input_datetime.tue_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.wed_frontdoor_5
+                      - input_boolean.wed_inc_frontdoor_5
+                      - input_datetime.wed_start_date_frontdoor_5
+                      - input_datetime.wed_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.thu_frontdoor_5
+                      - input_boolean.thu_inc_frontdoor_5
+                      - input_datetime.thu_start_date_frontdoor_5
+                      - input_datetime.thu_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.fri_frontdoor_5
+                      - input_boolean.fri_inc_frontdoor_5
+                      - input_datetime.fri_start_date_frontdoor_5
+                      - input_datetime.fri_end_date_frontdoor_5
+                      - type: divider
+                      - input_boolean.sat_frontdoor_5
+                      - input_boolean.sat_inc_frontdoor_5
+                      - input_datetime.sat_start_date_frontdoor_5
+                      - input_datetime.sat_end_date_frontdoor_5

@@ -1,7 +1,7 @@
 keymaster_frontdoor_manual_notify:
   alias: keymaster_frontdoor_manual_notify
   sequence:
-  - service: notify.mobile_app_andrews_iphone_12_pro
+  - service: notify.mobile_app_drews_iphone
     data:
       title: '{{ title }}'
       message: '{{ message }}'

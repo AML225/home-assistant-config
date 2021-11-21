@@ -85,11 +85,11 @@ script:
             - service: input_datetime.set_datetime
               data_template:
                 entity_id: "input_datetime.{{ days[repeat.index - 1] }}_start_date_frontdoor_{{ code_slot | string }}"
-                time: "{{ '00:00' | timestamp_custom('%H:%M') }}"
+                time: "{{ now().replace(hour=00,minute=00,second=00).strftime('%H:%M:%S') }}"
             - service: input_datetime.set_datetime
               data_template:
                 entity_id: "input_datetime.{{ days[repeat.index - 1] }}_end_date_frontdoor_{{ code_slot | string }}"
-                time: "{{ '00:00' | timestamp_custom('%H:%M') }}"
+                time: "{{ now().replace(hour=00,minute=00,second=00).strftime('%H:%M:%S') }}"
             - service: input_boolean.turn_on
               data_template:
                 entity_id: "input_boolean.{{ days[repeat.index - 1] }}_frontdoor_{{ code_slot | string }}"
@@ -139,7 +139,7 @@ automation:
   - alias: keymaster_frontdoor Reset Code Slot
     id: keymaster_frontdoor Reset Code Slot
     trigger:
-      entity_id: input_boolean.reset_codeslot_frontdoor_1,input_boolean.reset_codeslot_frontdoor_2,input_boolean.reset_codeslot_frontdoor_3
+      entity_id: input_boolean.reset_codeslot_frontdoor_1,input_boolean.reset_codeslot_frontdoor_2,input_boolean.reset_codeslot_frontdoor_3,input_boolean.reset_codeslot_frontdoor_4,input_boolean.reset_codeslot_frontdoor_5
       platform: state
       to: "on"
     action:
@@ -205,7 +205,7 @@ automation:
   - alias: keymaster_frontdoor Changed Code
     id: keymaster_frontdoor Changed Code
     trigger:
-      entity_id: input_text.frontdoor_pin_1,input_text.frontdoor_pin_2,input_text.frontdoor_pin_3
+      entity_id: input_text.frontdoor_pin_1,input_text.frontdoor_pin_2,input_text.frontdoor_pin_3,input_text.frontdoor_pin_4,input_text.frontdoor_pin_5
       platform: state
     condition:
       - condition: template
@@ -421,7 +421,7 @@ input_text:
 
   keymaster_frontdoor_autolock_door_time_day:
     name: "Day Auto Lock HH:MM:SS"
-    initial: "00:00:30"
+    initial: "00:15:00"
   keymaster_frontdoor_autolock_door_time_night:
     name: "Night Auto Lock HH:MM:SS"
-    initial: "00:00:03"
+    initial: "00:05:00"
