@@ -3,4 +3,12 @@
       kettle_on:
         friendly_name: "Kettle On"
         device_class: power
-        value_template: "{{ states('sensor.kettle_switch_electric_consumed_a')|float > 2.5 }}"
+        value_template: "{{ states('sensor.kettle_switch_electric_consumption_a')|float > 2.5 }}"
+      washing_machine_on:
+        friendly_name: "Washing Machine On"
+        device_class: power
+        value_template: "{{ states('sensor.washing_machine_electric_consumption_a')|float > 0.1 }}"
+      dryer_on:
+        friendly_name: "Dryer On"
+        device_class: power
+        value_template: "{{ states('sensor.dryer_electric_consumption_a')|float > 2.5 }}"

@@ -381,3 +381,241 @@
       friendly_name: TV Light 3
       supported_features: 63
       state: 'on'
+- id: '1640445518737'
+  name: Christmas
+  entities:
+    light.tv_light_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 10.118
+      - 100
+      rgb_color:
+      - 255
+      - 43
+      - 0
+      xy_color:
+      - 0.6915
+      - 0.3083
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 1
+      supported_features: 40
+      state: 'on'
+    light.tv_light_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 10.118
+      - 100
+      rgb_color:
+      - 255
+      - 43
+      - 0
+      xy_color:
+      - 0.6915
+      - 0.3083
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 2
+      supported_features: 40
+      state: 'on'
+    light.tv_light_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 135.529
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 66
+      xy_color:
+      - 0.17
+      - 0.7
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 3
+      supported_features: 40
+      state: 'on'
+    light.living_room_lamp:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 254
+      hs_color:
+      - 16.471
+      - 100
+      rgb_color:
+      - 255
+      - 70
+      - 0
+      xy_color:
+      - 0.675
+      - 0.322
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp
+      supported_features: 40
+      state: 'on'
+    light.bedroom_lightstrip:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 255
+      hs_color:
+      - 123.3
+      - 78.431
+      rgb_color:
+      - 55
+      - 255
+      - 66
+      xy_color:
+      - 0.1886
+      - 0.686
+      mode: normal
+      dynamics: none
+      friendly_name: Bedroom Lightstrip
+      supported_features: 40
+      state: 'on'
+  icon: mdi:pine-tree
+- id: '1640446237495'
+  name: No Christmas
+  entities:
+    light.tv_light_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 346
+      hs_color:
+      - 28.016
+      - 59.968
+      rgb_color:
+      - 255
+      - 173
+      - 102
+      xy_color:
+      - 0.507
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 1
+      supported_features: 40
+      state: 'on'
+    light.tv_light_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 346
+      hs_color:
+      - 28.016
+      - 59.968
+      rgb_color:
+      - 255
+      - 173
+      - 102
+      xy_color:
+      - 0.507
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 2
+      supported_features: 40
+      state: 'on'
+    light.tv_light_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 346
+      hs_color:
+      - 28.016
+      - 59.968
+      rgb_color:
+      - 255
+      - 173
+      - 102
+      xy_color:
+      - 0.507
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: TV Light 3
+      supported_features: 40
+      state: 'on'
+    light.bedroom_lightstrip:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      mode: normal
+      dynamics: none
+      friendly_name: Bedroom Lightstrip
+      supported_features: 40
+      state: 'off'
+    light.living_room_lamp:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp: 343
+      hs_color:
+      - 27.971
+      - 59.254
+      rgb_color:
+      - 255
+      - 174
+      - 103
+      xy_color:
+      - 0.505
+      - 0.385
+      mode: normal
+      dynamics: none
+      friendly_name: Living Room Lamp
+      supported_features: 40
+      state: 'on'
+  icon: mdi:pine-tree-fire
+- id: '1640450413706'
+  name: Christmas Time
+  entities:
+    input_boolean.christmas_time:
+      editable: true
+      icon: mdi:string-lights
+      friendly_name: Christmas Time
+      state: 'on'

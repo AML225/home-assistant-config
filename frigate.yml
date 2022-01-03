@@ -86,6 +86,32 @@ cameras:
     objects:
       track:
         - person
+  north-gate:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:eagle989@192.168.40.22:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - record
+            - rtmp
+        - path: rtsp://admin:eagle989@192.168.40.22:554/cam/realmonitor?channel=1&subtype=1
+          roles:
+            - detect
+    objects:
+      track:
+        - person
+  backyard-south:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:eagle989@192.168.40.19:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - record
+            - rtmp
+        - path: rtsp://admin:eagle989@192.168.40.19:554/cam/realmonitor?channel=1&subtype=1
+          roles:
+            - detect
+    objects:
+      track:
+        - person
 detect:
   enabled: True
   width: 704
