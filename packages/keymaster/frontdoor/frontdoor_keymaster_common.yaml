@@ -188,7 +188,7 @@ automation:
   - alias: keymaster_frontdoor Door Open and Close
     id: keymaster_frontdoor Door Open and Close
     trigger:
-      entity_id: binary_sensor.front_door_sensor_contact
+      entity_id: binary_sensor.konnected_front_door
       platform: state
     condition:
       - condition: state
@@ -287,7 +287,7 @@ automation:
     id: keymaster_retry_bolt_closed_frontdoor
     trigger:
       platform: state
-      entity_id: binary_sensor.front_door_sensor_contact
+      entity_id: binary_sensor.konnected_front_door
       to: "off"
     condition:
       - condition: state
@@ -309,7 +309,7 @@ automation:
     id: keymaster_frontdoor_opened
     trigger:
       platform: state
-      entity_id: binary_sensor.front_door_sensor_contact
+      entity_id: binary_sensor.konnected_front_door
       to: "on"
     action:
       - service: timer.start
@@ -407,7 +407,7 @@ lock:
     name: boltchecked_frontdoor
     value_template: "{{ is_state('lock.front_door_lock', 'locked') }}"
     lock:
-      service: "{{ 'script.boltchecked_retry_frontdoor' if (is_state('binary_sensor.front_door_sensor_contact', 'on')) else 'script.boltchecked_lock_frontdoor' }}"
+      service: "{{ 'script.boltchecked_retry_frontdoor' if (is_state('binary_sensor.konnected_front_door', 'on')) else 'script.boltchecked_lock_frontdoor' }}"
     unlock:
       service: lock.unlock
       data:

@@ -21,6 +21,9 @@ cameras:
     objects:
       track:
         - person
+    motion:
+      mask:
+        - 0,0,0,132,180,75,178,0
   front-doorbell:
     ffmpeg:
       inputs:
@@ -99,6 +102,9 @@ cameras:
     objects:
       track:
         - person
+    motion:
+      mask:
+        - 704,0,176,0,180,88,504,94,704,128
   backyard-south:
     ffmpeg:
       inputs:

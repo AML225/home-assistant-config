@@ -10,7 +10,7 @@
       - entity: >-
           lock.front_door_lock
       - entity: >-
-          binary_sensor.front_door_sensor_contact
+          binary_sensor.konnected_front_door
       - entity: input_text.keymaster_frontdoor_autolock_door_time_day
       - entity: input_text.keymaster_frontdoor_autolock_door_time_night
       - entity: input_boolean.keymaster_frontdoor_autolock
