@@ -12,3 +12,12 @@
         friendly_name: "Dryer On"
         device_class: power
         value_template: "{{ states('sensor.dryer_electric_consumption_a')|float > 2.5 }}"
+      drews_car_in_garage:
+        friendly_name: "Drew's Car"
+        device_class: occupancy
+        value_template: >-
+          {% if is_state('binary_sensor.garage_door_vehicle',"on") %}
+            on
+          {% elif is_state('binary_sensor.garage_door_vehicle',"off") %}
+            off
+          {% endif %}
