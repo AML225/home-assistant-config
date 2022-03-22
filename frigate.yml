@@ -132,10 +132,13 @@ snapshots:
     default: 3
 record:
   enabled: True
-  retain_days: 0
+  retain:
+    days: 7
+    mode: active_objects
   events:
     retain:
-      default: 1
+      default: 7
+      mode: active_objects
     pre_capture: 5
     post_capture: 5
 detectors:

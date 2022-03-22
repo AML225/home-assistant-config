@@ -10,11 +10,11 @@
       bedroom_air_quality:
         friendly_name: "Bedroom Air Quality"
         value_template: >-
-          {% if states('sensor.airthings_bedroom_voc')|int < 250 %}
+          {% if states('sensor.wavemini_voc')|int < 250 %}
             good
-          {% elif states('sensor.airthings_bedroom_voc')|int >= 250 and states('sensor.airthings_bedroom_voc')|int < 1000 %}
+          {% elif states('sensor.wavemini_voc')|int >= 250 and states('sensor.wavemini_voc')|int < 1000 %}
             fair
-          {% elif states('sensor.airthings_bedroom_voc')|int >= 1000 %}
+          {% elif states('sensor.wavemini_voc')|int >= 1000 %}
             poor
           {% else %}
             error
