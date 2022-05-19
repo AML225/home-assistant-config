@@ -1,0 +1,113 @@
+esphome:
+  name: bed-presence-sensor
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "f97317127eefa05f1f8b0c951660b53a"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.30.34
+    gateway: 192.168.30.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Bed-Presence-Sensor"
+    password: "ArMkbyz1KfxR"
+
+captive_portal:
+
+esp32_touch:
+  setup_mode: false
+  iir_filter: 50ms
+  voltage_attenuation: 1.5
+
+binary_sensor:
+  - platform: esp32_touch
+    name: "Drew Bed Upper"
+    pin: GPIO12
+    threshold: 12
+    id: drew_bed_upper
+    filters:
+      - delayed_on: 3s
+      - delayed_off: 30s
+  - platform: esp32_touch
+    name: "Drew Bed Middle"
+    pin: GPIO14
+    threshold: 10
+    id: drew_bed_middle
+    filters:
+      - delayed_on: 3s
+      - delayed_off: 30s
+  - platform: esp32_touch
+    name: "Drew Bed Lower"
+    pin: GPIO27
+    threshold: 11
+    id: drew_bed_lower
+    filters:
+      - delayed_on: 3s
+      - delayed_off: 30s
+  - platform: template
+    name: "Drew Bed Presence"
+    device_class: occupancy
+    id: drew_bed_presence
+    lambda: |-
+      if (id(drew_bed_upper).state ||
+        id(drew_bed_middle).state ||
+        id(drew_bed_lower).state) 
+      {
+        return true;
+      } else {
+        return false;
+      } 
+
+sensor:
+  - platform: airthings_wave_mini
+    ble_client_id: airthingswavemini
+    update_interval: 5min # default
+    temperature:
+      name: "WaveMini Temperature"
+    pressure:
+      name: "WaveMini Pressure"
+    humidity:
+      name: "WaveMini Humidity"
+    tvoc:
+      name: "WaveMini VOC"
+  - platform: airthings_wave_plus
+    ble_client_id: airthingswaveplus
+    update_interval: 5min # default
+    temperature:
+      name: "WavePlus Temperature"
+    radon:
+      name: "WavePlus Radon"
+    radon_long_term:
+      name: "WavePlus Radon Long Term"
+    pressure:
+      name: "WavePlus Pressure"
+    humidity:
+      name: "WavePlus Humidity"
+    co2:
+      name: "WavePlus CO2"
+    tvoc:
+      name: "WavePlus VOC"
+
+ble_client:
+  - mac_address: 80:6f:b0:b9:e9:62
+    id: airthingswavemini
+  - mac_address: 80:6f:b0:59:99:43
+    id: airthingswaveplus
+
+esp32_ble_tracker:

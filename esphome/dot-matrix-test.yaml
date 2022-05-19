@@ -1,0 +1,59 @@
+esphome:
+  name: dot-matrix-test
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "3d09848eaa13771e25ddcb40484da54c"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.30.39
+    gateway: 192.168.30.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Dot-Matrix-Test Fallback Hotspot"
+    password: "G4oXpFeNxKEY"
+
+captive_portal:
+
+spi:
+  clk_pin: GPIO13
+  mosi_pin: GPIO32
+
+display:
+  - platform: max7219digit
+    cs_pin: GPIO12
+    num_chips: 1
+    intensity: 7
+    rotate_chip: 90
+    scroll_mode: stop
+    lambda: |-
+      it.printf(0,0, id(digit_font), "%.f°F", id(display_text).state);
+#      it.strftime(0, 0, id(digit_font), "%M", id(display_text).now());
+      
+font:
+  - file: "pixelmix.ttf"
+    id: digit_font
+    size: 8
+    
+sensor:
+  - platform: homeassistant
+    id: display_text
+    entity_id: timer.tea_timer
+    internal: true
+#    filters:
+#      - to_upper:

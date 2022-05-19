@@ -1,0 +1,30 @@
+-== Watchman Report ==- 
+
+-== Congratulations, all 6 services from your config are available!
+
+-== Missing 9 entity(ies) from 55 found in your config:
++--------------------------------+---------+--------------------------------------------------------------+
+| Entity ID                      | State   | Location                                                     |
++--------------------------------+---------+--------------------------------------------------------------+
+| select.kitchen_light_local_pro | unknown | scenes.yaml:97                                               |
+| tection_state ('Kitchen Light: |         |                                                              |
+| Local protection state')       |         |                                                              |
+| select.kitchen_light_rf_protec | unknown | scenes.yaml:104                                              |
+| tion_state ('Kitchen Light: RF |         |                                                              |
+| protection state')             |         |                                                              |
+| light.bookshelf_lamp           | missing | scenes.yaml:235                                              |
+| light.kitchen_light_level      | missing | scenes.yaml:302                                              |
+| light.dining_room_light_level  | missing | scenes.yaml:308                                              |
+| light.guest_bedroom_light_leve | missing | scenes.yaml:314                                              |
+| l                              |         |                                                              |
+| light.bedroom_lightstrip       | unavail | scenes.yaml:522,621                                          |
+| ('Bedroom Lightstrip')         |         |                                                              |
+| sensor.airthings_living_room_v | unavail | includes/sensor.yaml:25,27,27,31                             |
+| oc ('Living Room VOC')         |         |                                                              |
+| sensor.airthings_living_room_c | unavail | includes/sensor.yaml:25,29,29,31                             |
+| o2 ('Living Room CO2')         |         |                                                              |
++--------------------------------+---------+--------------------------------------------------------------+
+
+-== Report created on 20 Apr 2022 04:59:34
+-== Parsed 27 files in 0.05s., ignored 11 files 
+-== Generated in: 0.00s. Validated in: 0.00s.
