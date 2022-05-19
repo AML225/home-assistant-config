@@ -1,113 +1,19 @@
-2022-05-17 18:22:27 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration keymaster which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:27 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:27 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:27 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration watchman which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:27 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration xiaomi_cloud_map_extractor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:27 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration frigate which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2022-05-17 18:22:30 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [140086765486032] Received invalid command: mobile_app/push_notification_channel
-2022-05-17 20:06:44 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-17 20:11:45 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Exception trying to establish web socket connection for hub 12529573: Cannot connect to host 192.168.30.5:8088 ssl:default [Connect call failed ('192.168.30.5', 8088)]
-2022-05-17 23:41:15 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 03:41:13 ERROR (MainThread) [homeassistant.components.xiaomi_miio] Timeout fetching Roborock S7 data
-2022-05-18 04:03:55 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 04:19:36 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 05:27:16 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 07:09:43 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 07:59:48 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 08:31:34 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Exception trying to establish web socket connection for hub 12529573: Cannot connect to host 192.168.30.5:8088 ssl:default [Connect call failed ('192.168.30.5', 8088)]
-2022-05-18 10:28:02 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Exception trying to establish web socket connection for hub 12529573: Cannot connect to host 192.168.30.5:8088 ssl:default [Connect call failed ('192.168.30.5', 8088)]
-2022-05-18 10:59:25 ERROR (MainThread) [homeassistant.components.xiaomi_miio] Unexpected error fetching Roborock S7 data: 'utf-8' codec can't decode byte 0xd4 in position 0: invalid continuation byte
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 191, in _async_refresh
-    self.data = await self._async_update_data()
-  File "/usr/src/homeassistant/homeassistant/helpers/update_coordinator.py", line 150, in _async_update_data
-    return await self.update_method()
-  File "/usr/src/homeassistant/homeassistant/components/xiaomi_miio/__init__.py", line 263, in update_async
-    return await execute_update()
-  File "/usr/src/homeassistant/homeassistant/components/xiaomi_miio/__init__.py", line 258, in execute_update
-    state = await hass.async_add_executor_job(update)
-  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/src/homeassistant/homeassistant/components/xiaomi_miio/__init__.py", line 241, in update
-    device.status(),
-  File "/usr/local/lib/python3.9/site-packages/miio/click_common.py", line 179, in _wrap
-    return func(self, *args, **kwargs)
-  File "/usr/local/lib/python3.9/site-packages/miio/integrations/vacuum/roborock/vacuum.py", line 375, in status
-    return VacuumStatus(self.send("get_status")[0])
-  File "/usr/local/lib/python3.9/site-packages/miio/device.py", line 106, in send
-    return self._protocol.send(
-  File "/usr/local/lib/python3.9/site-packages/miio/miioprotocol.py", line 194, in send
-    m = Message.parse(data, token=self.token)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 288, in parse
-    return self.parse_stream(io.BytesIO(data), **contextkw)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 300, in parse_stream
-    return self._parsereport(stream, context, "(parsing)")
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 312, in _parsereport
-    obj = self._parse(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 1981, in _parse
-    subobj = sc._parsereport(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 312, in _parsereport
-    obj = self._parse(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 2439, in _parse
-    return self.subcon._parsereport(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 312, in _parsereport
-    obj = self._parse(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 3987, in _parse
-    obj = self.subcon._parsereport(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 312, in _parsereport
-    obj = self._parse(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 4265, in _parse
-    obj = self.subcon._parsereport(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 312, in _parsereport
-    obj = self._parse(stream, context, path)
-  File "/usr/local/lib/python3.9/site-packages/construct/core.py", line 698, in _parse
-    return self._decode(obj, context, path)
-  File "/usr/local/lib/python3.9/site-packages/miio/protocol.py", line 193, in _decode
-    decoded = quirk(decrypted).decode("utf-8")
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd4 in position 0: invalid continuation byte
-2022-05-18 12:00:32 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 12:37:35 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 16:13:08 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 18:09:19 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Exception trying to establish web socket connection for hub 12529573: Cannot connect to host 192.168.30.5:8088 ssl:default [Connect call failed ('192.168.30.5', 8088)]
-2022-05-18 18:10:25 ERROR (MainThread) [homeassistant.components.xiaomi_miio] Timeout fetching Roborock S7 data
-2022-05-18 21:54:15 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 22:21:56 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 22:22:58 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-18 22:29:14 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-19 03:41:10 ERROR (MainThread) [homeassistant.components.xiaomi_miio] Timeout fetching Roborock S7 data
-2022-05-19 05:24:13 ERROR (MainThread) [aioharmony.hubconnector_websocket] 192.168.30.5: Connection timed out for hub 12529573
-2022-05-19 06:03:21 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /core/update request Server disconnected
-2022-05-19 06:03:21 ERROR (MainThread) [homeassistant.core] Error executing service: <ServiceCall update.install (c:0180dc69c58f4ed596b3f55dec2ef319): entity_id=['update.home_assistant_core_update'], version=2022.5.5, backup=False>
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/components/hassio/update.py", line 299, in async_install
-    await async_update_core(self.hass, version=version, backup=backup)
-  File "/usr/src/homeassistant/homeassistant/components/hassio/handler.py", line 44, in _wrapper
-    data = await funct(*argv, **kwargs)
-  File "/usr/src/homeassistant/homeassistant/components/hassio/__init__.py", line 385, in async_update_core
-    return await hassio.send_command(
-  File "/usr/src/homeassistant/homeassistant/components/hassio/handler.py", line 268, in send_command
-    raise HassioAPIError()
-homeassistant.components.hassio.handler.HassioAPIError
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1645, in catch_exceptions
-    await coro_or_task
-  File "/usr/src/homeassistant/homeassistant/core.py", line 1664, in _execute_service
-    await cast(Callable[[ServiceCall], Awaitable[None]], handler.job.target)(
-  File "/usr/src/homeassistant/homeassistant/helpers/entity_component.py", line 204, in handle_service
-    await service.entity_service_call(
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 677, in entity_service_call
-    future.result()  # pop exception if have
-  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 964, in async_request_call
-    await coro
-  File "/usr/src/homeassistant/homeassistant/helpers/service.py", line 714, in _handle_entity_call
-    await result
-  File "/usr/src/homeassistant/homeassistant/components/update/__init__.py", line 152, in async_install
-    await entity.async_install_with_progress(version, backup)
-  File "/usr/src/homeassistant/homeassistant/components/update/__init__.py", line 411, in async_install_with_progress
-    await self.async_install(version, backup)
-  File "/usr/src/homeassistant/homeassistant/components/hassio/update.py", line 301, in async_install
-    raise HomeAssistantError(
-homeassistant.exceptions.HomeAssistantError: Error updating Home Assistant Core 
+2022-05-19 07:39:45 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:45 WARNING (SyncWorker_5) [homeassistant.loader] We found a custom integration frigate which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:45 WARNING (SyncWorker_4) [homeassistant.loader] We found a custom integration xiaomi_cloud_map_extractor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:45 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration keymaster which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:45 WARNING (SyncWorker_2) [homeassistant.loader] We found a custom integration alexa_media which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:45 WARNING (SyncWorker_3) [homeassistant.loader] We found a custom integration watchman which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2022-05-19 07:39:47 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139958807176432] Received invalid command: energy/info
+2022-05-19 07:39:47 ERROR (MainThread) [homeassistant.components.websocket_api.http.connection] [139958796497968] Received invalid command: mobile_app/push_notification_channel
+2022-05-19 07:41:10 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:10 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:10 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:10 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:11 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:11 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:11 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:11 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:11 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:41:12 ERROR (MainThread) [frontend.js.latest.202205041] http://192.168.20.2:8123/hacsfiles/lovelace-auto-entities/auto-entities.js?hacstag=1677445841110:1:30990 Uncaught TypeError: Cannot assign to read only property 'filter' of object '#<Object>'
+2022-05-19 07:48:39 ERROR (MainThread) [homeassistant.components.hassio.handler] Client error on /homeassistant/restart request Server disconnected

@@ -1,5 +1,5 @@
 esphome:
-  name: bed-presence-sensor
+  name: airthings-esp32
 
 esp32:
   board: esp32dev
@@ -30,79 +30,35 @@ wifi:
 
 captive_portal:
 
-esp32_touch:
-  setup_mode: false
-  iir_filter: 50ms
-  voltage_attenuation: 1.5
-
-binary_sensor:
-  - platform: esp32_touch
-    name: "Drew Bed Upper"
-    pin: GPIO12
-    threshold: 12
-    id: drew_bed_upper
-    filters:
-      - delayed_on: 3s
-      - delayed_off: 30s
-  - platform: esp32_touch
-    name: "Drew Bed Middle"
-    pin: GPIO14
-    threshold: 10
-    id: drew_bed_middle
-    filters:
-      - delayed_on: 3s
-      - delayed_off: 30s
-  - platform: esp32_touch
-    name: "Drew Bed Lower"
-    pin: GPIO27
-    threshold: 11
-    id: drew_bed_lower
-    filters:
-      - delayed_on: 3s
-      - delayed_off: 30s
-  - platform: template
-    name: "Drew Bed Presence"
-    device_class: occupancy
-    id: drew_bed_presence
-    lambda: |-
-      if (id(drew_bed_upper).state ||
-        id(drew_bed_middle).state ||
-        id(drew_bed_lower).state) 
-      {
-        return true;
-      } else {
-        return false;
-      } 
-
 sensor:
   - platform: airthings_wave_mini
     ble_client_id: airthingswavemini
     update_interval: 5min # default
     temperature:
-      name: "WaveMini Temperature"
+      name: "Bedroom Temperature"
     pressure:
-      name: "WaveMini Pressure"
+      name: "Bedroom Pressure"
     humidity:
-      name: "WaveMini Humidity"
+      name: "Bedroom Humidity"
     tvoc:
-      name: "WaveMini VOC"
+      name: "Bedroom VOC"
   - platform: airthings_wave_plus
     ble_client_id: airthingswaveplus
     update_interval: 5min # default
     temperature:
-      name: "WavePlus Temperature"
+      name: "Living Room Temperature"
     radon:
-      name: "WavePlus Radon"
+      name: "Living Room Radon"
     radon_long_term:
-      name: "WavePlus Radon Long Term"
+      name: "Living Room Radon Long Term"
     pressure:
-      name: "WavePlus Pressure"
+      name: "Living Room Pressure"
     humidity:
-      name: "WavePlus Humidity"
+      name: "Living Room Humidity"
     co2:
-      name: "WavePlus CO2"
+      name: "Living Room CO2"
     tvoc:
-      name: "WavePlus VOC"
+      name: "Living Room VOC"
 
 ble_client:
   - mac_address: 80:6f:b0:b9:e9:62
