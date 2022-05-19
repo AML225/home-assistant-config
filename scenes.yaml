@@ -28,28 +28,37 @@
       friendly_name: Entry Light
       state: 'off'
     light.pipe_lamp_1:
+      effect_list:
+      - None
+      - candle
       supported_color_modes:
       - brightness
       mode: normal
       dynamics: none
       friendly_name: Pipe Lamp 1
-      supported_features: 40
+      supported_features: 44
       state: 'off'
     light.pipe_lamp_2:
+      effect_list:
+      - None
+      - candle
       supported_color_modes:
       - brightness
       mode: normal
       dynamics: none
       friendly_name: Pipe Lamp 2
-      supported_features: 40
+      supported_features: 44
       state: 'off'
     light.pipe_lamp_3:
+      effect_list:
+      - None
+      - candle
       supported_color_modes:
       - brightness
       mode: normal
       dynamics: none
       friendly_name: Pipe Lamp 3
-      supported_features: 40
+      supported_features: 44
       state: 'off'
     light.track_lights:
       supported_color_modes:
@@ -91,23 +100,6 @@
       - NoResponse
       friendly_name: 'Living Room Lights: RF protection state'
       state: Unprotected
-    switch.kitchen_light:
-      friendly_name: Kitchen Light
-      state: 'on'
-    select.kitchen_light_local_protection_state:
-      options:
-      - unknown (0x08)
-      - unknown (0x09)
-      - unknown (0x0a)
-      friendly_name: 'Kitchen Light: Local protection state'
-      state: unknown
-    select.kitchen_light_rf_protection_state:
-      options:
-      - unknown (0x08)
-      - unknown (0x09)
-      - unknown (0x0a)
-      friendly_name: 'Kitchen Light: RF protection state'
-      state: unknown
     light.dining_room_mantle_lamp:
       min_mireds: 153
       max_mireds: 500

@@ -100,11 +100,11 @@
       - type: processor_use
 #      - type: processor_temperature
       - type: last_boot
-  - platform: airthings_wave
-    mac: 80:6f:b0:b9:e9:62 #Wave Mini, Bedroom
-    scan_interval: 120
-    elevation: 268
-  - platform: airthings_wave
-    mac: 80:6f:b0:59:99:43 #Wave Plus, Living Room
-    scan_interval: 120
-    elevation: 268
+#  - platform: airthings_wave
+#    mac: 80:6f:b0:b9:e9:62 #Wave Mini, Bedroom
+#    scan_interval: 120
+#    elevation: 268
+#  - platform: airthings_wave
+#    mac: 80:6f:b0:59:99:43 #Wave Plus, Living Room
+#    scan_interval: 120
+#    elevation: 268
